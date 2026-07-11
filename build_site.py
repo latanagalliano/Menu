@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
-Genera data.js da Airtable.
-Legge tre tabelle (le ultime due sono opzionali: se mancano, si usano
-i valori di default e il sito continua a funzionare):
-  - "Piatti"      : i piatti (obbligatoria)
-  - "Categorie"   : sezioni + sottotitoli + visibilita' + ordine (opzionale)
-  - "Testi sito"  : motto, coperto, note (opzionale)
+Genera data.js da Airtable — La Tana.
+
+Tabelle lette:
+  - "Piatti"      (obbligatoria)
+  - "Categorie"   (opzionale: se manca si usa il fallback qui sotto)
+  - "Testi sito"  (opzionale: idem)
 
 Traduce SOLO le descrizioni dei piatti in EN/DE/ES/FR via DeepL, con cache.
+Senza DEEPL_API_KEY le descrizioni restano in italiano (nessun errore).
 
 Env: AIRTABLE_TOKEN, AIRTABLE_BASE_ID (obbligatorie), DEEPL_API_KEY (opzionale).
 """
@@ -19,39 +20,41 @@ import urllib.request, urllib.parse, urllib.error
 CACHE_FILE = "translations_cache.json"
 TARGETS = {"en": "EN-GB", "de": "DE", "es": "ES", "fr": "FR"}
 
-# mappa nome-categoria -> id stabile (per agganciare le traduzioni curate in index.html)
+# nome categoria -> id stabile (aggancia le traduzioni curate in index.html)
 NAME2ID = {
-    "Antipasti & Sfizi":"antipasti", "Fritti":"fritti",
-    "Le Pizze — Classiche":"classiche", "Le Pizze — Gourmet":"gourmet",
-    "Calzoni":"calzoni", "Primi":"primi", "Secondi":"secondi",
-    "Contorni":"contorni", "Dolci":"dolci", "Bevande":"bevande",
+    "Antipasti":"antipasti", "Primi":"primi", "Contorni":"contorni",
+    "Pizze":"pizze", "Aggiunte":"aggiunte", "Birre":"birre",
+    "Vini":"vini", "Bevande":"bevande",
 }
 
-# fallback categorie (se la tabella "Categorie" non esiste): (nome, sottotitolo, ordine)
+# fallback se la tabella "Categorie" non esiste: (nome, sottotitolo, ordine)
 FALLBACK_CATEGORIES = [
-    ("Antipasti & Sfizi","gli inizi che contano",1),
-    ("Fritti","il peccato è servito",2),
-    ("Le Pizze — Classiche","lievitazione 48h",3),
-    ("Le Pizze — Gourmet","quelle che si danno un tono",4),
-    ("Calzoni","la pizza che si ripiega su sé stessa",5),
-    ("Primi","fatti come si deve",6),
-    ("Secondi","roba seria",7),
-    ("Contorni","mai da soli",8),
-    ("Dolci","fatti in casa",9),
-    ("Bevande","per accompagnare",10),
+    ("Antipasti","per cominciare",1),
+    ("Primi","dalla cucina",2),
+    ("Contorni","da accompagnare",3),
+    ("Pizze","dal nostro forno",4),
+    ("Aggiunte","Tutte le pizze anche con farina integrale",5),
+    ("Birre","alla spina e in bottiglia",6),
+    ("Vini","della casa e in bottiglia",7),
+    ("Bevande","analcolici e caffetteria",8),
 ]
 
-# fallback testi sito (se la tabella "Testi sito" non esiste)
+# fallback se la tabella "Testi sito" non esiste
 DEFAULT_SITE = {
-    "coperto": "2",
-    "motto": "«Ogni pizza è un piccolo miracolo.\nLa lievitazione fa il resto.»",
+    "name": "La Tana",
+    "kicker": "",
+    "subtitle": "Pizzeria",
+    "motto": "«Da noi si sta bene, come in una tana.»",
+    "coperto": "",   # vuoto = la riga non compare
     "frozenLegend": "* prodotto surgelato all'origine o congelato in loco",
     "footerNote": "Menù allergeni e informazioni sugli ingredienti disponibili su richiesta.",
     "legendNote": "Menù allergeni completo e informazioni sugli ingredienti disponibili su richiesta. Rif. Reg. UE 1169/2011.",
 }
-# chiave in "Testi sito" -> campo interno di site
+
+# chiave in "Testi sito" -> campo interno
 TESTI_MAP = {
-    "coperto":"coperto", "motto":"motto", "nota_surgelati":"frozenLegend",
+    "nome_locale":"name", "sopratitolo":"kicker", "sottotitolo":"subtitle",
+    "motto":"motto", "coperto":"coperto", "nota_surgelati":"frozenLegend",
     "nota_allergeni":"footerNote", "nota_legenda_allergeni":"legendNote",
 }
 
@@ -65,11 +68,11 @@ LABEL2KEY = {
 
 # ---------- Airtable ----------
 def fetch_table(token, base_id, table, required=False):
-    """Ritorna la lista dei record, o None se la tabella opzionale non esiste.
-    Airtable segnala una tabella mancante in modi diversi (404, oppure 403
-    'INVALID_PERMISSIONS_OR_MODEL_NOT_FOUND'). Dato che 'Piatti' (required)
-    viene letta per prima con successo, i permessi sono a posto: quindi per
-    le tabelle opzionali un 403/404/422 significa 'tabella assente'."""
+    """Record della tabella, o None se una tabella opzionale non esiste.
+    Airtable segnala una tabella mancante in modi diversi (404, o 403
+    'INVALID_PERMISSIONS_OR_MODEL_NOT_FOUND'). Dato che 'Piatti' viene letta
+    per prima con successo, i permessi sono a posto: per le opzionali un
+    403/404/422 significa quindi 'tabella assente'."""
     records, offset = [], None
     while True:
         url = "https://api.airtable.com/v0/%s/%s?pageSize=100" % (base_id, urllib.parse.quote(table))
@@ -86,12 +89,9 @@ def fetch_table(token, base_id, table, required=False):
                 print("Tabella opzionale '%s' assente (HTTP %s): uso i valori di default." % (table, e.code))
                 return None
             print("ERRORE Airtable su '%s': HTTP %s" % (table, e.code))
-            if e.code == 403:
-                print(">> Il token non ha 'data.records:read'.")
-            elif e.code == 404:
-                print(">> Tabella '%s' non trovata." % table)
-            elif e.code == 401:
-                print(">> Token non valido/scaduto.")
+            if e.code == 403:   print(">> Il token non ha 'data.records:read'.")
+            elif e.code == 404: print(">> Tabella '%s' non trovata." % table)
+            elif e.code == 401: print(">> Token non valido/scaduto.")
             print("Dettaglio:", body[:300]); sys.exit(1)
         records.extend(data.get("records", []))
         offset = data.get("offset")
@@ -137,16 +137,17 @@ def truthy(v):
 
 # ---------- build ----------
 def build(piatti, categorie, testi, deepl_key):
-    # --- site texts ---
+    # testi del sito: se la riga esiste su Airtable vince sempre,
+    # anche se vuota (vuoto = quell'elemento non compare).
     site = dict(DEFAULT_SITE)
     if testi:
         for rec in testi:
             f = rec.get("fields", {})
             k = (f.get("Chiave") or "").strip()
-            if k in TESTI_MAP and (f.get("Testo") not in (None, "")):
-                site[TESTI_MAP[k]] = f.get("Testo")
+            if k in TESTI_MAP:
+                site[TESTI_MAP[k]] = (f.get("Testo") or "")
 
-    # --- categorie ordinate (da tabella o fallback) ---
+    # categorie
     if categorie:
         cats = []
         for rec in categorie:
@@ -158,16 +159,17 @@ def build(piatti, categorie, testi, deepl_key):
                          f.get("Ordine") if f.get("Ordine") is not None else 1e9))
         cats.sort(key=lambda c: c[2])
     else:
-        cats = [(n, s, o) for (n, s, o) in FALLBACK_CATEGORIES]
+        cats = list(FALLBACK_CATEGORIES)
 
-    # --- piatti visibili ordinati ---
+    # piatti visibili, ordinati
     rows = [r.get("fields", {}) for r in piatti if truthy(r.get("fields", {}).get("Visibile"))]
     rows.sort(key=lambda f: (f.get("Ordine") is None, f.get("Ordine", 1e9)))
 
-    # --- traduzione descrizioni ---
+    # traduzione descrizioni (con cache)
     cache = load_cache()
     for lang in TARGETS: cache.setdefault(lang, {})
     calls = [0]; warned = {"no_key": False, "err": False}
+
     def tr_desc(desc_it):
         out = {"it": desc_it}
         for lang, code in TARGETS.items():
@@ -175,14 +177,14 @@ def build(piatti, categorie, testi, deepl_key):
             if desc_it in cache[lang]: out[lang] = cache[lang][desc_it]; continue
             if not deepl_key: out[lang] = desc_it; warned["no_key"] = True; continue
             try:
-                t = deepl_translate(desc_it, code, deepl_key); calls[0]+=1
+                t = deepl_translate(desc_it, code, deepl_key); calls[0] += 1
                 cache[lang][desc_it] = t; out[lang] = t
             except Exception as e:
                 out[lang] = desc_it
-                if not warned["err"]: print("Avviso DeepL:", str(e)[:160]); warned["err"]=True
+                if not warned["err"]:
+                    print("Avviso DeepL:", str(e)[:160]); warned["err"] = True
         return out
 
-    # --- sezioni ---
     sections = []
     for nome, subtitle, _ in cats:
         items = []
@@ -206,15 +208,15 @@ def build(piatti, categorie, testi, deepl_key):
     if warned["no_key"]:
         print("Nota: DEEPL_API_KEY assente -> descrizioni lasciate in italiano.")
     print("Traduzioni nuove richieste a DeepL:", calls[0])
-    print("Categorie:", "da Airtable" if categorie else "fallback (codice)",
-          "| Testi sito:", "da Airtable" if testi else "fallback (codice)")
+    print("Categorie:", "da Airtable" if categorie else "fallback",
+          "| Testi sito:", "da Airtable" if testi else "fallback")
     return {"site": site, "sections": sections}
 
 
 def render_js(data):
     payload = json.dumps(data, ensure_ascii=False, indent=2)
     return ("/* GENERATO AUTOMATICAMENTE DA build_site.py — non modificare a mano.\n"
-            "   Fonte: Airtable (Piatti + Categorie + Testi sito). Descrizioni: DeepL. */\n"
+            "   Fonte: Airtable (Piatti + Categorie + Testi sito). */\n"
             "window.MENU_DATA = " + payload + ";\n")
 
 
@@ -222,12 +224,12 @@ def main():
     token = os.environ.get("AIRTABLE_TOKEN")
     base_id = os.environ.get("AIRTABLE_BASE_ID")
     deepl_key = os.environ.get("DEEPL_API_KEY", "").strip()
-    if not token: print("ERRORE: manca il secret AIRTABLE_TOKEN."); sys.exit(1)
-    if not base_id: print("ERRORE: manca AIRTABLE_BASE_ID nel workflow."); sys.exit(1)
+    if not token:   print("ERRORE: manca il secret AIRTABLE_TOKEN."); sys.exit(1)
+    if not base_id: print("ERRORE: manca il secret AIRTABLE_BASE_ID."); sys.exit(1)
 
     piatti = fetch_table(token, base_id, "Piatti", required=True)
-    categorie = fetch_table(token, base_id, "Categorie")     # None se assente
-    testi = fetch_table(token, base_id, "Testi sito")        # None se assente
+    categorie = fetch_table(token, base_id, "Categorie")
+    testi = fetch_table(token, base_id, "Testi sito")
 
     data = build(piatti, categorie, testi, deepl_key)
     n = sum(len(s["items"]) for s in data["sections"])

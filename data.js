@@ -1,9 +1,12 @@
 /* GENERATO AUTOMATICAMENTE DA build_site.py — non modificare a mano.
-   Fonte: Airtable (Piatti + Categorie + Testi sito). Descrizioni: DeepL. */
+   Fonte: Airtable (Piatti + Categorie + Testi sito). */
 window.MENU_DATA = {
   "site": {
-    "coperto": "2",
-    "motto": "«Ogni pizza è un piccolo miracolo.\nLa lievitazione fa il resto.»",
+    "name": "La Tana",
+    "kicker": "",
+    "subtitle": "Pizzeria",
+    "motto": "«Da noi si sta bene, come in una tana.»",
+    "coperto": "",
     "frozenLegend": "* prodotto surgelato all'origine o congelato in loco",
     "footerNote": "Menù allergeni e informazioni sugli ingredienti disponibili su richiesta.",
     "legendNote": "Menù allergeni completo e informazioni sugli ingredienti disponibili su richiesta. Rif. Reg. UE 1169/2011."
@@ -11,406 +14,74 @@ window.MENU_DATA = {
   "sections": [
     {
       "id": "antipasti",
-      "title": "Antipasti & Sfizi",
-      "subtitle": "gli inizi che contano",
+      "title": "Antipasti",
+      "subtitle": "per cominciare",
       "items": [
         {
-          "name": "Tagliere del Santo",
-          "price": "€ 14",
-          "keys": [
-            "latte",
-            "frutta",
-            "solfiti"
-          ],
-          "desc": {
-            "it": "Salumi e formaggi toscani, miele e confetture",
-            "en": "Salumi e formaggi toscani, miele e confetture",
-            "de": "Salumi e formaggi toscani, miele e confetture",
-            "es": "Salumi e formaggi toscani, miele e confetture",
-            "fr": "Salumi e formaggi toscani, miele e confetture"
-          }
-        },
-        {
-          "name": "Bruschette miste (3 pz)",
-          "price": "€ 7",
-          "keys": [
-            "glutine"
-          ],
-          "desc": {
-            "it": "Pane toscano, pomodoro e olio nuovo",
-            "en": "Pane toscano, pomodoro e olio nuovo",
-            "de": "Pane toscano, pomodoro e olio nuovo",
-            "es": "Pane toscano, pomodoro e olio nuovo",
-            "fr": "Pane toscano, pomodoro e olio nuovo"
-          }
-        },
-        {
-          "name": "Burrata pugliese",
-          "price": "€ 9",
-          "keys": [
-            "latte"
-          ],
-          "desc": {
-            "it": "Con pomodorini confit",
-            "en": "Con pomodorini confit",
-            "de": "Con pomodorini confit",
-            "es": "Con pomodorini confit",
-            "fr": "Con pomodorini confit"
-          }
-        },
-        {
-          "name": "Polpette al sugo della nonna",
-          "price": "€ 8",
+          "name": "Crostini",
+          "price": "€ 4,50",
           "keys": [
             "glutine",
-            "uova",
             "latte",
+            "pesce",
             "sedano"
           ],
           "desc": {
-            "it": "Nel sugo lento di pomodoro",
-            "en": "Nel sugo lento di pomodoro",
-            "de": "Nel sugo lento di pomodoro",
-            "es": "Nel sugo lento di pomodoro",
-            "fr": "Nel sugo lento di pomodoro"
+            "it": "",
+            "en": "",
+            "de": "",
+            "es": "",
+            "fr": ""
           }
         },
         {
-          "name": "Fiori di zucca ripieni",
-          "price": "€ 7",
+          "name": "Antipasto di Mare",
+          "price": "€ 10",
           "keys": [
-            "glutine",
-            "uova",
-            "latte",
-            "pesce"
-          ],
-          "desc": {
-            "it": "Mozzarella e acciuga",
-            "en": "Mozzarella e acciuga",
-            "de": "Mozzarella e acciuga",
-            "es": "Mozzarella e acciuga",
-            "fr": "Mozzarella e acciuga"
-          },
-          "frozen": true
-        }
-      ]
-    },
-    {
-      "id": "fritti",
-      "title": "Fritti",
-      "subtitle": "il peccato è servito",
-      "items": [
-        {
-          "name": "Coccoli, prosciutto e stracchino",
-          "price": "€ 8",
-          "keys": [
-            "glutine",
-            "latte"
-          ],
-          "desc": {
-            "it": "Frittelle calde appena fatte",
-            "en": "Frittelle calde appena fatte",
-            "de": "Frittelle calde appena fatte",
-            "es": "Frittelle calde appena fatte",
-            "fr": "Frittelle calde appena fatte"
-          }
-        },
-        {
-          "name": "Supplì al telefono (2 pz)",
-          "price": "€ 6",
-          "keys": [
-            "glutine",
-            "uova",
-            "latte",
+            "pesce",
+            "crostacei",
+            "molluschi",
             "sedano"
           ],
           "desc": {
-            "it": "Riso, ragù e mozzarella filante",
-            "en": "Riso, ragù e mozzarella filante",
-            "de": "Riso, ragù e mozzarella filante",
-            "es": "Riso, ragù e mozzarella filante",
-            "fr": "Riso, ragù e mozzarella filante"
-          }
-        },
-        {
-          "name": "Olive all'ascolana (6 pz)",
-          "price": "€ 6",
-          "keys": [
-            "glutine",
-            "uova",
-            "latte",
-            "sedano"
-          ],
-          "desc": {
-            "it": "Ripiene e fritte",
-            "en": "Ripiene e fritte",
-            "de": "Ripiene e fritte",
-            "es": "Ripiene e fritte",
-            "fr": "Ripiene e fritte"
+            "it": "",
+            "en": "",
+            "de": "",
+            "es": "",
+            "fr": ""
           },
           "frozen": true
         },
         {
-          "name": "Patatine fritte",
-          "price": "€ 4",
-          "keys": [],
-          "desc": {
-            "it": "Croccanti, sempre",
-            "en": "Croccanti, sempre",
-            "de": "Croccanti, sempre",
-            "es": "Croccanti, sempre",
-            "fr": "Croccanti, sempre"
-          },
-          "frozen": true
-        }
-      ]
-    },
-    {
-      "id": "classiche",
-      "title": "Le Pizze — Classiche",
-      "subtitle": "lievitazione 48h",
-      "items": [
-        {
-          "name": "Marinara",
-          "price": "€ 6",
-          "keys": [
-            "glutine"
-          ],
-          "desc": {
-            "it": "Pomodoro, aglio, origano, olio EVO",
-            "en": "Pomodoro, aglio, origano, olio EVO",
-            "de": "Pomodoro, aglio, origano, olio EVO",
-            "es": "Pomodoro, aglio, origano, olio EVO",
-            "fr": "Pomodoro, aglio, origano, olio EVO"
-          }
-        },
-        {
-          "name": "Margherita",
-          "price": "€ 7",
-          "keys": [
-            "glutine",
-            "latte"
-          ],
-          "desc": {
-            "it": "Pomodoro, mozzarella, basilico",
-            "en": "Pomodoro, mozzarella, basilico",
-            "de": "Pomodoro, mozzarella, basilico",
-            "es": "Pomodoro, mozzarella, basilico",
-            "fr": "Pomodoro, mozzarella, basilico"
-          }
-        },
-        {
-          "name": "Napoli",
-          "price": "€ 8,50",
-          "keys": [
-            "glutine",
-            "latte",
-            "pesce"
-          ],
-          "desc": {
-            "it": "Acciughe e capperi",
-            "en": "Acciughe e capperi",
-            "de": "Acciughe e capperi",
-            "es": "Acciughe e capperi",
-            "fr": "Acciughe e capperi"
-          }
-        },
-        {
-          "name": "Diavola",
-          "price": "€ 8,50",
-          "keys": [
-            "glutine",
-            "latte"
-          ],
-          "desc": {
-            "it": "Salame piccante",
-            "en": "Salame piccante",
-            "de": "Salame piccante",
-            "es": "Salame piccante",
-            "fr": "Salame piccante"
-          }
-        },
-        {
-          "name": "Capricciosa",
-          "price": "€ 9,50",
-          "keys": [
-            "glutine",
-            "latte",
-            "uova"
-          ],
-          "desc": {
-            "it": "Prosciutto, funghi, carciofi, uovo",
-            "en": "Prosciutto, funghi, carciofi, uovo",
-            "de": "Prosciutto, funghi, carciofi, uovo",
-            "es": "Prosciutto, funghi, carciofi, uovo",
-            "fr": "Prosciutto, funghi, carciofi, uovo"
-          }
-        },
-        {
-          "name": "Quattro Formaggi",
-          "price": "€ 9",
-          "keys": [
-            "glutine",
-            "latte"
-          ],
-          "desc": {
-            "it": "Mozzarella, gorgonzola, fontina, grana",
-            "en": "Mozzarella, gorgonzola, fontina, grana",
-            "de": "Mozzarella, gorgonzola, fontina, grana",
-            "es": "Mozzarella, gorgonzola, fontina, grana",
-            "fr": "Mozzarella, gorgonzola, fontina, grana"
-          }
-        },
-        {
-          "name": "Quattro Stagioni",
-          "price": "€ 9,50",
-          "keys": [
-            "glutine",
-            "latte"
-          ],
-          "desc": {
-            "it": "Prosciutto, funghi, carciofi, olive",
-            "en": "Prosciutto, funghi, carciofi, olive",
-            "de": "Prosciutto, funghi, carciofi, olive",
-            "es": "Prosciutto, funghi, carciofi, olive",
-            "fr": "Prosciutto, funghi, carciofi, olive"
-          }
-        },
-        {
-          "name": "Prosciutto e funghi",
-          "price": "€ 9",
-          "keys": [
-            "glutine",
-            "latte"
-          ],
-          "desc": {
-            "it": "Cotto e champignon",
-            "en": "Cotto e champignon",
-            "de": "Cotto e champignon",
-            "es": "Cotto e champignon",
-            "fr": "Cotto e champignon"
-          }
-        }
-      ]
-    },
-    {
-      "id": "gourmet",
-      "title": "Le Pizze — Gourmet",
-      "subtitle": "quelle che si danno un tono",
-      "items": [
-        {
-          "name": "La Santa",
-          "price": "€ 13",
-          "keys": [
-            "glutine",
-            "latte",
-            "frutta"
-          ],
-          "desc": {
-            "it": "Bufala DOP, mortadella e pistacchio",
-            "en": "Bufala DOP, mortadella e pistacchio",
-            "de": "Bufala DOP, mortadella e pistacchio",
-            "es": "Bufala DOP, mortadella e pistacchio",
-            "fr": "Bufala DOP, mortadella e pistacchio"
-          }
-        },
-        {
-          "name": "Peccato di Gola",
-          "price": "€ 12",
-          "keys": [
-            "glutine",
-            "latte",
-            "solfiti"
-          ],
-          "desc": {
-            "it": "Nduja, stracciata e cipolla caramellata",
-            "en": "Nduja, stracciata e cipolla caramellata",
-            "de": "Nduja, stracciata e cipolla caramellata",
-            "es": "Nduja, stracciata e cipolla caramellata",
-            "fr": "Nduja, stracciata e cipolla caramellata"
-          }
-        },
-        {
-          "name": "Ortolana",
-          "price": "€ 11",
-          "keys": [
-            "glutine",
-            "latte",
-            "frutta"
-          ],
-          "desc": {
-            "it": "Verdure grigliate e pesto",
-            "en": "Verdure grigliate e pesto",
-            "de": "Verdure grigliate e pesto",
-            "es": "Verdure grigliate e pesto",
-            "fr": "Verdure grigliate e pesto"
-          }
-        },
-        {
-          "name": "Tonno e Cipolla",
-          "price": "€ 9,50",
-          "keys": [
-            "glutine",
-            "pesce"
-          ],
-          "desc": {
-            "it": "Tonno e cipolla di Tropea",
-            "en": "Tonno e cipolla di Tropea",
-            "de": "Tonno e cipolla di Tropea",
-            "es": "Tonno e cipolla di Tropea",
-            "fr": "Tonno e cipolla di Tropea"
-          }
-        },
-        {
-          "name": "Boscaiola",
-          "price": "€ 11",
-          "keys": [
-            "glutine",
-            "latte"
-          ],
-          "desc": {
-            "it": "Salsiccia, porcini e panna",
-            "en": "Salsiccia, porcini e panna",
-            "de": "Salsiccia, porcini e panna",
-            "es": "Salsiccia, porcini e panna",
-            "fr": "Salsiccia, porcini e panna"
-          }
-        }
-      ]
-    },
-    {
-      "id": "calzoni",
-      "title": "Calzoni",
-      "subtitle": "la pizza che si ripiega su sé stessa",
-      "items": [
-        {
-          "name": "Calzone Classico",
-          "price": "€ 9",
-          "keys": [
-            "glutine",
-            "latte"
-          ],
-          "desc": {
-            "it": "Cotto, mozzarella e funghi",
-            "en": "Cotto, mozzarella e funghi",
-            "de": "Cotto, mozzarella e funghi",
-            "es": "Cotto, mozzarella e funghi",
-            "fr": "Cotto, mozzarella e funghi"
-          }
-        },
-        {
-          "name": "Calzone del Santo",
+          "name": "Antipasto Toscano",
           "price": "€ 10",
           "keys": [
             "glutine",
-            "latte"
+            "latte",
+            "pesce",
+            "sedano",
+            "solfiti"
           ],
           "desc": {
-            "it": "Ricotta, spinaci e salsiccia",
-            "en": "Ricotta, spinaci e salsiccia",
-            "de": "Ricotta, spinaci e salsiccia",
-            "es": "Ricotta, spinaci e salsiccia",
-            "fr": "Ricotta, spinaci e salsiccia"
+            "it": "",
+            "en": "",
+            "de": "",
+            "es": "",
+            "fr": ""
+          }
+        },
+        {
+          "name": "Antipasto di Verdure Sott'Olio",
+          "price": "€ 6",
+          "keys": [
+            "solfiti"
+          ],
+          "desc": {
+            "it": "",
+            "en": "",
+            "de": "",
+            "es": "",
+            "fr": ""
           }
         }
       ]
@@ -418,135 +89,166 @@ window.MENU_DATA = {
     {
       "id": "primi",
       "title": "Primi",
-      "subtitle": "fatti come si deve",
+      "subtitle": "dalla cucina",
       "items": [
         {
-          "name": "Pici cacio e pepe",
-          "price": "€ 10",
+          "name": "Spaghetti alla Carrettiera",
+          "price": "€ 7",
+          "keys": [
+            "glutine"
+          ],
+          "desc": {
+            "it": "",
+            "en": "",
+            "de": "",
+            "es": "",
+            "fr": ""
+          }
+        },
+        {
+          "name": "Penne ai Medici",
+          "price": "€ 8",
           "keys": [
             "glutine",
             "latte"
           ],
           "desc": {
-            "it": "Pasta fresca tirata a mano",
-            "en": "Pasta fresca tirata a mano",
-            "de": "Pasta fresca tirata a mano",
-            "es": "Pasta fresca tirata a mano",
-            "fr": "Pasta fresca tirata a mano"
+            "it": "",
+            "en": "",
+            "de": "",
+            "es": "",
+            "fr": ""
           }
         },
         {
-          "name": "Tagliatelle al ragù toscano",
-          "price": "€ 11",
+          "name": "Penne Stracciate",
+          "price": "€ 8",
           "keys": [
             "glutine",
-            "uova",
-            "sedano"
-          ],
-          "desc": {
-            "it": "Ragù di carne lento",
-            "en": "Ragù di carne lento",
-            "de": "Ragù di carne lento",
-            "es": "Ragù di carne lento",
-            "fr": "Ragù di carne lento"
-          }
-        },
-        {
-          "name": "Ravioli ricotta e spinaci",
-          "price": "€ 10",
-          "keys": [
-            "glutine",
-            "uova",
             "latte"
           ],
           "desc": {
-            "it": "Burro e salvia",
-            "en": "Burro e salvia",
-            "de": "Burro e salvia",
-            "es": "Burro e salvia",
-            "fr": "Burro e salvia"
+            "it": "",
+            "en": "",
+            "de": "",
+            "es": "",
+            "fr": ""
           }
         },
         {
-          "name": "Risotto ai porcini",
-          "price": "€ 11",
+          "name": "Penne Funghi e Salsiccia",
+          "price": "€ 9,50",
           "keys": [
+            "glutine",
             "latte",
             "solfiti"
           ],
           "desc": {
-            "it": "Mantecato ai funghi porcini",
-            "en": "Mantecato ai funghi porcini",
-            "de": "Mantecato ai funghi porcini",
-            "es": "Mantecato ai funghi porcini",
-            "fr": "Mantecato ai funghi porcini"
-          }
-        }
-      ]
-    },
-    {
-      "id": "secondi",
-      "title": "Secondi",
-      "subtitle": "roba seria",
-      "items": [
-        {
-          "name": "Tagliata di manzo",
-          "price": "€ 18",
-          "keys": [
-            "latte"
-          ],
-          "desc": {
-            "it": "Rucola e scaglie di grana",
-            "en": "Rucola e scaglie di grana",
-            "de": "Rucola e scaglie di grana",
-            "es": "Rucola e scaglie di grana",
-            "fr": "Rucola e scaglie di grana"
-          }
+            "it": "",
+            "en": "",
+            "de": "",
+            "es": "",
+            "fr": ""
+          },
+          "frozen": true
         },
         {
-          "name": "Peposo alla fornacina",
-          "price": "€ 14",
+          "name": "Tortelli al Ragù",
+          "price": "€ 10",
           "keys": [
-            "solfiti",
+            "glutine",
+            "uova",
+            "latte",
             "sedano"
           ],
           "desc": {
-            "it": "Stracotto toscano al pepe",
-            "en": "Stracotto toscano al pepe",
-            "de": "Stracotto toscano al pepe",
-            "es": "Stracotto toscano al pepe",
-            "fr": "Stracotto toscano al pepe"
-          }
+            "it": "",
+            "en": "",
+            "de": "",
+            "es": "",
+            "fr": ""
+          },
+          "frozen": true
         },
         {
-          "name": "Baccalà alla livornese",
-          "price": "€ 15",
-          "keys": [
-            "pesce",
-            "sedano"
-          ],
-          "desc": {
-            "it": "In umido di pomodoro",
-            "en": "In umido di pomodoro",
-            "de": "In umido di pomodoro",
-            "es": "In umido di pomodoro",
-            "fr": "In umido di pomodoro"
-          }
-        },
-        {
-          "name": "Cotoletta alla milanese",
-          "price": "€ 13",
+          "name": "Tortelli Burro e Salvia",
+          "price": "€ 9,50",
           "keys": [
             "glutine",
             "uova",
             "latte"
           ],
           "desc": {
-            "it": "Con patate",
-            "en": "Con patate",
-            "de": "Con patate",
-            "es": "Con patate",
-            "fr": "Con patate"
+            "it": "",
+            "en": "",
+            "de": "",
+            "es": "",
+            "fr": ""
+          },
+          "frozen": true
+        },
+        {
+          "name": "Spaghetti al Granchio",
+          "price": "€ 10",
+          "keys": [
+            "glutine",
+            "crostacei",
+            "sedano"
+          ],
+          "desc": {
+            "it": "",
+            "en": "",
+            "de": "",
+            "es": "",
+            "fr": ""
+          },
+          "frozen": true
+        },
+        {
+          "name": "Tagliatelle ai Funghi Porcini",
+          "price": "€ 10",
+          "keys": [
+            "glutine",
+            "uova",
+            "latte"
+          ],
+          "desc": {
+            "it": "",
+            "en": "",
+            "de": "",
+            "es": "",
+            "fr": ""
+          },
+          "frozen": true
+        },
+        {
+          "name": "Würstel con Patate Fritte",
+          "price": "€ 9",
+          "keys": [
+            "latte",
+            "soia"
+          ],
+          "desc": {
+            "it": "",
+            "en": "",
+            "de": "",
+            "es": "",
+            "fr": ""
+          },
+          "frozen": true
+        },
+        {
+          "name": "Salsiccia con Patate o Fagioli",
+          "price": "€ 10",
+          "keys": [
+            "solfiti"
+          ],
+          "desc": {
+            "it": "",
+            "en": "",
+            "de": "",
+            "es": "",
+            "fr": ""
           }
         }
       ]
@@ -554,11 +256,24 @@ window.MENU_DATA = {
     {
       "id": "contorni",
       "title": "Contorni",
-      "subtitle": "mai da soli",
+      "subtitle": "da accompagnare",
       "items": [
         {
-          "name": "Insalata mista",
+          "name": "Patate Fritte",
           "price": "€ 4",
+          "keys": [],
+          "desc": {
+            "it": "",
+            "en": "",
+            "de": "",
+            "es": "",
+            "fr": ""
+          },
+          "frozen": true
+        },
+        {
+          "name": "Insalata Verde",
+          "price": "€ 3",
           "keys": [],
           "desc": {
             "it": "",
@@ -569,33 +284,7 @@ window.MENU_DATA = {
           }
         },
         {
-          "name": "Patate al forno",
-          "price": "€ 4",
-          "keys": [],
-          "desc": {
-            "it": "",
-            "en": "",
-            "de": "",
-            "es": "",
-            "fr": ""
-          }
-        },
-        {
-          "name": "Fagioli all'uccelletto",
-          "price": "€ 5",
-          "keys": [
-            "sedano"
-          ],
-          "desc": {
-            "it": "Al pomodoro e salvia",
-            "en": "Al pomodoro e salvia",
-            "de": "Al pomodoro e salvia",
-            "es": "Al pomodoro e salvia",
-            "fr": "Al pomodoro e salvia"
-          }
-        },
-        {
-          "name": "Verdure grigliate",
+          "name": "Insalata Mista",
           "price": "€ 5",
           "keys": [],
           "desc": {
@@ -609,16 +298,569 @@ window.MENU_DATA = {
       ]
     },
     {
-      "id": "dolci",
-      "title": "Dolci",
-      "subtitle": "fatti in casa",
+      "id": "pizze",
+      "title": "Pizze",
+      "subtitle": "dal nostro forno",
       "items": [
         {
-          "name": "Tiramisù del Santo",
-          "price": "€ 5",
+          "name": "Margherita",
+          "price": "€ 6,50",
           "keys": [
             "glutine",
-            "uova",
+            "latte"
+          ],
+          "desc": {
+            "it": "pomodoro e mozzarella",
+            "en": "pomodoro e mozzarella",
+            "de": "pomodoro e mozzarella",
+            "es": "pomodoro e mozzarella",
+            "fr": "pomodoro e mozzarella"
+          }
+        },
+        {
+          "name": "Capricciosa",
+          "price": "€ 8",
+          "keys": [
+            "glutine",
+            "latte"
+          ],
+          "desc": {
+            "it": "pomodoro, mozzarella, prosciutto cotto e funghi",
+            "en": "pomodoro, mozzarella, prosciutto cotto e funghi",
+            "de": "pomodoro, mozzarella, prosciutto cotto e funghi",
+            "es": "pomodoro, mozzarella, prosciutto cotto e funghi",
+            "fr": "pomodoro, mozzarella, prosciutto cotto e funghi"
+          }
+        },
+        {
+          "name": "Quattro Stagioni",
+          "price": "€ 8",
+          "keys": [
+            "glutine",
+            "latte"
+          ],
+          "desc": {
+            "it": "pomodoro, mozzarella, prosciutto cotto, funghi, carciofi e olive",
+            "en": "pomodoro, mozzarella, prosciutto cotto, funghi, carciofi e olive",
+            "de": "pomodoro, mozzarella, prosciutto cotto, funghi, carciofi e olive",
+            "es": "pomodoro, mozzarella, prosciutto cotto, funghi, carciofi e olive",
+            "fr": "pomodoro, mozzarella, prosciutto cotto, funghi, carciofi e olive"
+          }
+        },
+        {
+          "name": "Frutti di Mare",
+          "price": "€ 10",
+          "keys": [
+            "glutine",
+            "latte",
+            "pesce",
+            "crostacei",
+            "molluschi"
+          ],
+          "desc": {
+            "it": "pomodoro, mozzarella e frutti di mare",
+            "en": "pomodoro, mozzarella e frutti di mare",
+            "de": "pomodoro, mozzarella e frutti di mare",
+            "es": "pomodoro, mozzarella e frutti di mare",
+            "fr": "pomodoro, mozzarella e frutti di mare"
+          },
+          "frozen": true
+        },
+        {
+          "name": "Galliano",
+          "price": "€ 8",
+          "keys": [
+            "glutine",
+            "latte",
+            "solfiti"
+          ],
+          "desc": {
+            "it": "pomodoro, mozzarella, funghi e salsiccia",
+            "en": "pomodoro, mozzarella, funghi e salsiccia",
+            "de": "pomodoro, mozzarella, funghi e salsiccia",
+            "es": "pomodoro, mozzarella, funghi e salsiccia",
+            "fr": "pomodoro, mozzarella, funghi e salsiccia"
+          }
+        },
+        {
+          "name": "Fantasia",
+          "price": "€ 8,50",
+          "keys": [
+            "glutine",
+            "latte"
+          ],
+          "desc": {
+            "it": "pomodoro, mozzarella, un po' di tutto",
+            "en": "pomodoro, mozzarella, un po' di tutto",
+            "de": "pomodoro, mozzarella, un po' di tutto",
+            "es": "pomodoro, mozzarella, un po' di tutto",
+            "fr": "pomodoro, mozzarella, un po' di tutto"
+          }
+        },
+        {
+          "name": "La Tana",
+          "price": "€ 8",
+          "keys": [
+            "glutine",
+            "latte",
+            "soia"
+          ],
+          "desc": {
+            "it": "pomodoro, mozzarella, würstel, olive e carciofi",
+            "en": "pomodoro, mozzarella, würstel, olive e carciofi",
+            "de": "pomodoro, mozzarella, würstel, olive e carciofi",
+            "es": "pomodoro, mozzarella, würstel, olive e carciofi",
+            "fr": "pomodoro, mozzarella, würstel, olive e carciofi"
+          }
+        },
+        {
+          "name": "Vesuvio",
+          "price": "€ 7,50",
+          "keys": [
+            "glutine",
+            "latte"
+          ],
+          "desc": {
+            "it": "pomodoro, mozzarella e prosciutto cotto",
+            "en": "pomodoro, mozzarella e prosciutto cotto",
+            "de": "pomodoro, mozzarella e prosciutto cotto",
+            "es": "pomodoro, mozzarella e prosciutto cotto",
+            "fr": "pomodoro, mozzarella e prosciutto cotto"
+          }
+        },
+        {
+          "name": "La Diavola",
+          "price": "€ 7,50",
+          "keys": [
+            "glutine",
+            "latte",
+            "solfiti"
+          ],
+          "desc": {
+            "it": "pomodoro, mozzarella, salsiccia e peperoncino",
+            "en": "pomodoro, mozzarella, salsiccia e peperoncino",
+            "de": "pomodoro, mozzarella, salsiccia e peperoncino",
+            "es": "pomodoro, mozzarella, salsiccia e peperoncino",
+            "fr": "pomodoro, mozzarella, salsiccia e peperoncino"
+          }
+        },
+        {
+          "name": "Tonno",
+          "price": "€ 7,50",
+          "keys": [
+            "glutine",
+            "latte",
+            "pesce"
+          ],
+          "desc": {
+            "it": "pomodoro, mozzarella e tonno",
+            "en": "pomodoro, mozzarella e tonno",
+            "de": "pomodoro, mozzarella e tonno",
+            "es": "pomodoro, mozzarella e tonno",
+            "fr": "pomodoro, mozzarella e tonno"
+          }
+        },
+        {
+          "name": "Funghi",
+          "price": "€ 7",
+          "keys": [
+            "glutine",
+            "latte"
+          ],
+          "desc": {
+            "it": "pomodoro, mozzarella e funghi champignon",
+            "en": "pomodoro, mozzarella e funghi champignon",
+            "de": "pomodoro, mozzarella e funghi champignon",
+            "es": "pomodoro, mozzarella e funghi champignon",
+            "fr": "pomodoro, mozzarella e funghi champignon"
+          }
+        },
+        {
+          "name": "Gorgonzola",
+          "price": "€ 8",
+          "keys": [
+            "glutine",
+            "latte"
+          ],
+          "desc": {
+            "it": "pomodoro, mozzarella e gorgonzola",
+            "en": "pomodoro, mozzarella e gorgonzola",
+            "de": "pomodoro, mozzarella e gorgonzola",
+            "es": "pomodoro, mozzarella e gorgonzola",
+            "fr": "pomodoro, mozzarella e gorgonzola"
+          }
+        },
+        {
+          "name": "Quattro Formaggi",
+          "price": "€ 8,50",
+          "keys": [
+            "glutine",
+            "latte"
+          ],
+          "desc": {
+            "it": "pomodoro, mozzarella, gorgonzola, stracchino ed edamer",
+            "en": "pomodoro, mozzarella, gorgonzola, stracchino ed edamer",
+            "de": "pomodoro, mozzarella, gorgonzola, stracchino ed edamer",
+            "es": "pomodoro, mozzarella, gorgonzola, stracchino ed edamer",
+            "fr": "pomodoro, mozzarella, gorgonzola, stracchino ed edamer"
+          }
+        },
+        {
+          "name": "Contadina",
+          "price": "€ 8",
+          "keys": [
+            "glutine",
+            "latte"
+          ],
+          "desc": {
+            "it": "pomodoro, mozzarella, prosciutto cotto e cipolle",
+            "en": "pomodoro, mozzarella, prosciutto cotto e cipolle",
+            "de": "pomodoro, mozzarella, prosciutto cotto e cipolle",
+            "es": "pomodoro, mozzarella, prosciutto cotto e cipolle",
+            "fr": "pomodoro, mozzarella, prosciutto cotto e cipolle"
+          }
+        },
+        {
+          "name": "Marinara",
+          "price": "€ 5,50",
+          "keys": [
+            "glutine"
+          ],
+          "desc": {
+            "it": "pomodoro, aglio e origano",
+            "en": "pomodoro, aglio e origano",
+            "de": "pomodoro, aglio e origano",
+            "es": "pomodoro, aglio e origano",
+            "fr": "pomodoro, aglio e origano"
+          }
+        },
+        {
+          "name": "Vegetariana",
+          "price": "€ 8,50",
+          "keys": [
+            "glutine",
+            "latte"
+          ],
+          "desc": {
+            "it": "pomodoro, mozzarella, funghi, cipolle, olive e verdure",
+            "en": "pomodoro, mozzarella, funghi, cipolle, olive e verdure",
+            "de": "pomodoro, mozzarella, funghi, cipolle, olive e verdure",
+            "es": "pomodoro, mozzarella, funghi, cipolle, olive e verdure",
+            "fr": "pomodoro, mozzarella, funghi, cipolle, olive e verdure"
+          }
+        },
+        {
+          "name": "Porcini",
+          "price": "€ 9",
+          "keys": [
+            "glutine",
+            "latte"
+          ],
+          "desc": {
+            "it": "pomodoro, mozzarella e funghi porcini",
+            "en": "pomodoro, mozzarella e funghi porcini",
+            "de": "pomodoro, mozzarella e funghi porcini",
+            "es": "pomodoro, mozzarella e funghi porcini",
+            "fr": "pomodoro, mozzarella e funghi porcini"
+          },
+          "frozen": true
+        },
+        {
+          "name": "Gorgonzola e Speck",
+          "price": "€ 9,50",
+          "keys": [
+            "glutine",
+            "latte"
+          ],
+          "desc": {
+            "it": "pomodoro, mozzarella, gorgonzola e speck",
+            "en": "pomodoro, mozzarella, gorgonzola e speck",
+            "de": "pomodoro, mozzarella, gorgonzola e speck",
+            "es": "pomodoro, mozzarella, gorgonzola e speck",
+            "fr": "pomodoro, mozzarella, gorgonzola e speck"
+          }
+        },
+        {
+          "name": "Maialona",
+          "price": "€ 8,50",
+          "keys": [
+            "glutine",
+            "latte",
+            "soia",
+            "solfiti"
+          ],
+          "desc": {
+            "it": "pomodoro, mozzarella, prosciutto cotto, salsiccia e würstel",
+            "en": "pomodoro, mozzarella, prosciutto cotto, salsiccia e würstel",
+            "de": "pomodoro, mozzarella, prosciutto cotto, salsiccia e würstel",
+            "es": "pomodoro, mozzarella, prosciutto cotto, salsiccia e würstel",
+            "fr": "pomodoro, mozzarella, prosciutto cotto, salsiccia e würstel"
+          }
+        },
+        {
+          "name": "Donatello",
+          "price": "€ 8",
+          "keys": [
+            "glutine",
+            "latte"
+          ],
+          "desc": {
+            "it": "pomodoro, mozzarella, melanzane e cipolle",
+            "en": "pomodoro, mozzarella, melanzane e cipolle",
+            "de": "pomodoro, mozzarella, melanzane e cipolle",
+            "es": "pomodoro, mozzarella, melanzane e cipolle",
+            "fr": "pomodoro, mozzarella, melanzane e cipolle"
+          }
+        },
+        {
+          "name": "Napoli",
+          "price": "€ 7",
+          "keys": [
+            "glutine",
+            "latte",
+            "pesce"
+          ],
+          "desc": {
+            "it": "pomodoro, mozzarella, acciughe, capperi e olive",
+            "en": "pomodoro, mozzarella, acciughe, capperi e olive",
+            "de": "pomodoro, mozzarella, acciughe, capperi e olive",
+            "es": "pomodoro, mozzarella, acciughe, capperi e olive",
+            "fr": "pomodoro, mozzarella, acciughe, capperi e olive"
+          }
+        },
+        {
+          "name": "Calabrese",
+          "price": "€ 8",
+          "keys": [
+            "glutine",
+            "latte",
+            "solfiti"
+          ],
+          "desc": {
+            "it": "pomodoro, mozzarella, salamino e cipolla",
+            "en": "pomodoro, mozzarella, salamino e cipolla",
+            "de": "pomodoro, mozzarella, salamino e cipolla",
+            "es": "pomodoro, mozzarella, salamino e cipolla",
+            "fr": "pomodoro, mozzarella, salamino e cipolla"
+          }
+        },
+        {
+          "name": "Toscana",
+          "price": "€ 8,50",
+          "keys": [
+            "glutine",
+            "latte",
+            "solfiti"
+          ],
+          "desc": {
+            "it": "pomodoro, mozzarella, melanzane e salsiccia",
+            "en": "pomodoro, mozzarella, melanzane e salsiccia",
+            "de": "pomodoro, mozzarella, melanzane e salsiccia",
+            "es": "pomodoro, mozzarella, melanzane e salsiccia",
+            "fr": "pomodoro, mozzarella, melanzane e salsiccia"
+          }
+        },
+        {
+          "name": "Siciliana",
+          "price": "€ 6,50",
+          "keys": [
+            "glutine",
+            "pesce"
+          ],
+          "desc": {
+            "it": "pomodoro, acciughe, capperi e olive",
+            "en": "pomodoro, acciughe, capperi e olive",
+            "de": "pomodoro, acciughe, capperi e olive",
+            "es": "pomodoro, acciughe, capperi e olive",
+            "fr": "pomodoro, acciughe, capperi e olive"
+          }
+        },
+        {
+          "name": "Strega",
+          "price": "€ 7,50",
+          "keys": [
+            "glutine"
+          ],
+          "desc": {
+            "it": "porri, cipolla e peperoncino",
+            "en": "porri, cipolla e peperoncino",
+            "de": "porri, cipolla e peperoncino",
+            "es": "porri, cipolla e peperoncino",
+            "fr": "porri, cipolla e peperoncino"
+          }
+        },
+        {
+          "name": "Burrata, Acciughe e Capperi",
+          "price": "€ 9",
+          "keys": [
+            "glutine",
+            "latte",
+            "pesce"
+          ],
+          "desc": {
+            "it": "burrata, acciughe e capperi",
+            "en": "burrata, acciughe e capperi",
+            "de": "burrata, acciughe e capperi",
+            "es": "burrata, acciughe e capperi",
+            "fr": "burrata, acciughe e capperi"
+          }
+        },
+        {
+          "name": "N'duja e Scamorza",
+          "price": "€ 8,50",
+          "keys": [
+            "glutine",
+            "latte"
+          ],
+          "desc": {
+            "it": "n'duja e scamorza",
+            "en": "n'duja e scamorza",
+            "de": "n'duja e scamorza",
+            "es": "n'duja e scamorza",
+            "fr": "n'duja e scamorza"
+          }
+        },
+        {
+          "name": "Calzone",
+          "price": "€ 8",
+          "keys": [
+            "glutine",
+            "latte"
+          ],
+          "desc": {
+            "it": "mozzarella e prosciutto cotto",
+            "en": "mozzarella e prosciutto cotto",
+            "de": "mozzarella e prosciutto cotto",
+            "es": "mozzarella e prosciutto cotto",
+            "fr": "mozzarella e prosciutto cotto"
+          }
+        },
+        {
+          "name": "Calzone Farcito",
+          "price": "€ 8,50",
+          "keys": [
+            "glutine",
+            "latte"
+          ],
+          "desc": {
+            "it": "mozzarella e un po' di tutto",
+            "en": "mozzarella e un po' di tutto",
+            "de": "mozzarella e un po' di tutto",
+            "es": "mozzarella e un po' di tutto",
+            "fr": "mozzarella e un po' di tutto"
+          }
+        },
+        {
+          "name": "Covaccino all'Olio",
+          "price": "€ 8",
+          "keys": [
+            "glutine"
+          ],
+          "desc": {
+            "it": "schiacciatina all'olio",
+            "en": "schiacciatina all'olio",
+            "de": "schiacciatina all'olio",
+            "es": "schiacciatina all'olio",
+            "fr": "schiacciatina all'olio"
+          }
+        },
+        {
+          "name": "Covaccino",
+          "price": "€ 7",
+          "keys": [
+            "glutine"
+          ],
+          "desc": {
+            "it": "schiacciatina con prosciutto crudo",
+            "en": "schiacciatina con prosciutto crudo",
+            "de": "schiacciatina con prosciutto crudo",
+            "es": "schiacciatina con prosciutto crudo",
+            "fr": "schiacciatina con prosciutto crudo"
+          }
+        },
+        {
+          "name": "Covaccino con Mozzarella",
+          "price": "€ 8",
+          "keys": [
+            "glutine",
+            "latte"
+          ],
+          "desc": {
+            "it": "schiacciatina con mozzarella e prosciutto cotto",
+            "en": "schiacciatina con mozzarella e prosciutto cotto",
+            "de": "schiacciatina con mozzarella e prosciutto cotto",
+            "es": "schiacciatina con mozzarella e prosciutto cotto",
+            "fr": "schiacciatina con mozzarella e prosciutto cotto"
+          }
+        },
+        {
+          "name": "Covaccino Estivo",
+          "price": "€ 8",
+          "keys": [
+            "glutine"
+          ],
+          "desc": {
+            "it": "schiacciatina con pomodoro, prosciutto e rucola",
+            "en": "schiacciatina con pomodoro, prosciutto e rucola",
+            "de": "schiacciatina con pomodoro, prosciutto e rucola",
+            "es": "schiacciatina con pomodoro, prosciutto e rucola",
+            "fr": "schiacciatina con pomodoro, prosciutto e rucola"
+          }
+        },
+        {
+          "name": "Covaccino Estivo con Mozzarella",
+          "price": "€ 8,50",
+          "keys": [
+            "glutine",
+            "latte"
+          ],
+          "desc": {
+            "it": "schiacciatina con mozzarella, prosciutto e rucola",
+            "en": "schiacciatina con mozzarella, prosciutto e rucola",
+            "de": "schiacciatina con mozzarella, prosciutto e rucola",
+            "es": "schiacciatina con mozzarella, prosciutto e rucola",
+            "fr": "schiacciatina con mozzarella, prosciutto e rucola"
+          }
+        },
+        {
+          "name": "Covaccino Porcini e Speck",
+          "price": "€ 9,50",
+          "keys": [
+            "glutine",
+            "latte"
+          ],
+          "desc": {
+            "it": "schiacciatina con mozzarella, porcini e speck",
+            "en": "schiacciatina con mozzarella, porcini e speck",
+            "de": "schiacciatina con mozzarella, porcini e speck",
+            "es": "schiacciatina con mozzarella, porcini e speck",
+            "fr": "schiacciatina con mozzarella, porcini e speck"
+          },
+          "frozen": true
+        }
+      ]
+    },
+    {
+      "id": "aggiunte",
+      "title": "Aggiunte",
+      "subtitle": "Tutte le pizze anche con farina integrale",
+      "items": [
+        {
+          "name": "Prosciutto Crudo",
+          "price": "€ 2,50",
+          "keys": [],
+          "desc": {
+            "it": "",
+            "en": "",
+            "de": "",
+            "es": "",
+            "fr": ""
+          }
+        },
+        {
+          "name": "Mozzarella di Bufala",
+          "price": "€ 2",
+          "keys": [
             "latte"
           ],
           "desc": {
@@ -630,8 +872,20 @@ window.MENU_DATA = {
           }
         },
         {
-          "name": "Panna cotta ai frutti di bosco",
-          "price": "€ 5",
+          "name": "Rucola",
+          "price": "€ 0,50",
+          "keys": [],
+          "desc": {
+            "it": "",
+            "en": "",
+            "de": "",
+            "es": "",
+            "fr": ""
+          }
+        },
+        {
+          "name": "Burrata",
+          "price": "€ 3",
           "keys": [
             "latte"
           ],
@@ -644,12 +898,119 @@ window.MENU_DATA = {
           }
         },
         {
-          "name": "Cantucci e Vin Santo",
+          "name": "Altri ingredienti",
+          "price": "",
+          "keys": [],
+          "desc": {
+            "it": "secondo quantità",
+            "en": "secondo quantità",
+            "de": "secondo quantità",
+            "es": "secondo quantità",
+            "fr": "secondo quantità"
+          }
+        }
+      ]
+    },
+    {
+      "id": "birre",
+      "title": "Birre",
+      "subtitle": "alla spina e in bottiglia",
+      "items": [
+        {
+          "name": "Franziskaner 0,5 L",
+          "price": "€ 4",
+          "keys": [
+            "glutine"
+          ],
+          "desc": {
+            "it": "",
+            "en": "",
+            "de": "",
+            "es": "",
+            "fr": ""
+          }
+        },
+        {
+          "name": "Ceres 0,4 L",
+          "price": "€ 3,50",
+          "keys": [
+            "glutine"
+          ],
+          "desc": {
+            "it": "",
+            "en": "",
+            "de": "",
+            "es": "",
+            "fr": ""
+          }
+        },
+        {
+          "name": "Media alla Spina 0,5 L",
           "price": "€ 5",
           "keys": [
-            "glutine",
-            "uova",
-            "frutta",
+            "glutine"
+          ],
+          "desc": {
+            "it": "",
+            "en": "",
+            "de": "",
+            "es": "",
+            "fr": ""
+          }
+        },
+        {
+          "name": "Piccola alla Spina 0,25 L",
+          "price": "€ 3",
+          "keys": [
+            "glutine"
+          ],
+          "desc": {
+            "it": "",
+            "en": "",
+            "de": "",
+            "es": "",
+            "fr": ""
+          }
+        },
+        {
+          "name": "Moretti 0,66 L",
+          "price": "€ 3,50",
+          "keys": [
+            "glutine"
+          ],
+          "desc": {
+            "it": "",
+            "en": "",
+            "de": "",
+            "es": "",
+            "fr": ""
+          }
+        },
+        {
+          "name": "Borgo al Cornio 0,75 L",
+          "price": "€ 10",
+          "keys": [
+            "glutine"
+          ],
+          "desc": {
+            "it": "artigianale",
+            "en": "artigianale",
+            "de": "artigianale",
+            "es": "artigianale",
+            "fr": "artigianale"
+          }
+        }
+      ]
+    },
+    {
+      "id": "vini",
+      "title": "Vini",
+      "subtitle": "della casa e in bottiglia",
+      "items": [
+        {
+          "name": "Vino della Casa 1 L",
+          "price": "€ 10",
+          "keys": [
             "solfiti"
           ],
           "desc": {
@@ -661,13 +1022,52 @@ window.MENU_DATA = {
           }
         },
         {
-          "name": "Tortino cioccolato cuore caldo",
-          "price": "€ 6",
+          "name": "Vino della Casa 0,5 L",
+          "price": "€ 5",
           "keys": [
-            "glutine",
-            "uova",
-            "latte",
-            "soia"
+            "solfiti"
+          ],
+          "desc": {
+            "it": "",
+            "en": "",
+            "de": "",
+            "es": "",
+            "fr": ""
+          }
+        },
+        {
+          "name": "Vino Bianco Frizzante alla Spina 1 L",
+          "price": "€ 10",
+          "keys": [
+            "solfiti"
+          ],
+          "desc": {
+            "it": "",
+            "en": "",
+            "de": "",
+            "es": "",
+            "fr": ""
+          }
+        },
+        {
+          "name": "Vino Bianco Frizzante alla Spina 0,5 L",
+          "price": "€ 5",
+          "keys": [
+            "solfiti"
+          ],
+          "desc": {
+            "it": "",
+            "en": "",
+            "de": "",
+            "es": "",
+            "fr": ""
+          }
+        },
+        {
+          "name": "Vino in Bottiglia",
+          "price": "€ 5",
+          "keys": [
+            "solfiti"
           ],
           "desc": {
             "it": "",
@@ -682,11 +1082,11 @@ window.MENU_DATA = {
     {
       "id": "bevande",
       "title": "Bevande",
-      "subtitle": "per accompagnare",
+      "subtitle": "analcolici e caffetteria",
       "items": [
         {
-          "name": "Acqua nat. / friz. 0,75L",
-          "price": "€ 2",
+          "name": "Coca Cola Media alla Spina",
+          "price": "€ 4,50",
           "keys": [],
           "desc": {
             "it": "",
@@ -697,36 +1097,8 @@ window.MENU_DATA = {
           }
         },
         {
-          "name": "Birra della casa 0,4L",
-          "price": "€ 5",
-          "keys": [
-            "glutine"
-          ],
-          "desc": {
-            "it": "",
-            "en": "",
-            "de": "",
-            "es": "",
-            "fr": ""
-          }
-        },
-        {
-          "name": "Birra artigianale toscana 0,33L",
-          "price": "€ 6",
-          "keys": [
-            "glutine"
-          ],
-          "desc": {
-            "it": "",
-            "en": "",
-            "de": "",
-            "es": "",
-            "fr": ""
-          }
-        },
-        {
-          "name": "Bibite 0,33L",
-          "price": "€ 3",
+          "name": "Coca Cola Piccola alla Spina",
+          "price": "€ 2,50",
           "keys": [],
           "desc": {
             "it": "",
@@ -737,49 +1109,31 @@ window.MENU_DATA = {
           }
         },
         {
-          "name": "Chianti DOCG",
-          "price": "€ 5 / 18",
-          "keys": [
-            "solfiti"
-          ],
+          "name": "Lattine",
+          "price": "€ 2,50",
+          "keys": [],
           "desc": {
-            "it": "calice / bottiglia",
-            "en": "calice / bottiglia",
-            "de": "calice / bottiglia",
-            "es": "calice / bottiglia",
-            "fr": "calice / bottiglia"
+            "it": "",
+            "en": "",
+            "de": "",
+            "es": "",
+            "fr": ""
           }
         },
         {
-          "name": "Vermentino",
-          "price": "€ 5 / 18",
-          "keys": [
-            "solfiti"
-          ],
+          "name": "Acqua Minerale 1 L",
+          "price": "€ 2,50",
+          "keys": [],
           "desc": {
-            "it": "calice / bottiglia",
-            "en": "calice / bottiglia",
-            "de": "calice / bottiglia",
-            "es": "calice / bottiglia",
-            "fr": "calice / bottiglia"
+            "it": "",
+            "en": "",
+            "de": "",
+            "es": "",
+            "fr": ""
           }
         },
         {
-          "name": "Prosecco",
-          "price": "€ 5 / 20",
-          "keys": [
-            "solfiti"
-          ],
-          "desc": {
-            "it": "calice / bottiglia",
-            "en": "calice / bottiglia",
-            "de": "calice / bottiglia",
-            "es": "calice / bottiglia",
-            "fr": "calice / bottiglia"
-          }
-        },
-        {
-          "name": "Caffè",
+          "name": "Acqua Minerale 0,5 L",
           "price": "€ 1,50",
           "keys": [],
           "desc": {
@@ -791,10 +1145,10 @@ window.MENU_DATA = {
           }
         },
         {
-          "name": "Cappuccino",
-          "price": "€ 2",
+          "name": "Amari",
+          "price": "€ 2,50",
           "keys": [
-            "latte"
+            "solfiti"
           ],
           "desc": {
             "it": "",
@@ -805,11 +1159,9 @@ window.MENU_DATA = {
           }
         },
         {
-          "name": "Amari",
-          "price": "€ 4",
-          "keys": [
-            "solfiti"
-          ],
+          "name": "Caffè",
+          "price": "€ 1,50",
+          "keys": [],
           "desc": {
             "it": "",
             "en": "",

@@ -36,9 +36,6 @@
   .hero h1{animation:heroIn .8s ease both;animation-delay:.1s;font-family:'DM Serif Display',serif;font-size:clamp(54px,18vw,84px);line-height:.95;margin:14px 0 0;color:#fbf3e2;letter-spacing:.5px;text-shadow:0 2px 34px rgba(0,0,0,.45);}
   .subtitle{animation:heroIn .8s ease both;animation-delay:.18s;margin-top:14px;font-size:calc(var(--u) * .75);letter-spacing:5px;text-transform:uppercase;color:#eaad55;font-weight:600;}
   .motto{animation:heroIn .8s ease both;animation-delay:.26s;max-width:34em;margin:22px auto 0;font-family:'DM Serif Display',serif;font-style:italic;font-size:calc(var(--u) * 1.06);line-height:1.5;color:#e6d5bc;}
-  .langbar{animation:heroIn .8s ease both;animation-delay:.34s;margin-top:22px;display:flex;gap:7px;justify-content:center;flex-wrap:wrap;}
-  .langbtn{padding:.4em .8em;border-radius:999px;border:1px solid rgba(234,173,85,.5);background:rgba(255,255,255,.06);color:#ead6b4;font-size:calc(var(--u) * .75);font-weight:600;letter-spacing:.5px;cursor:pointer;transition:all .18s ease;}
-  .langbtn.on{background:#eaad55;border-color:#eaad55;color:#2b140b;}
 
   nav.stick{position:sticky;top:0;z-index:30;background:rgba(244,235,215,.9);backdrop-filter:blur(12px) saturate(1.1);-webkit-backdrop-filter:blur(12px) saturate(1.1);border-bottom:1px solid #e1d2b3;box-shadow:0 8px 20px -14px rgba(60,30,10,.55);}
   .navrow{display:flex;align-items:center;gap:8px;padding:9px 12px;}
@@ -102,8 +99,6 @@
     .kicker,.subtitle{color:#eaad55;}
     .hero h1{color:#fbf3e2;}
     .motto{color:#f0dcc0;}
-    .langbtn{background:rgba(255,255,255,.06);color:#ead6b4;border-color:rgba(234,173,85,.5);}
-    .langbtn.on{background:#eaad55;border-color:#eaad55;color:#2b140b;}
     nav.stick{background:rgba(247,238,218,.92);border-bottom-color:#e1d2b3;}
     .tab{background:#fff9ee;color:#7a674e;border-color:#e4d6ba;}
     .tab.active{background:#2a1b12;color:#f6ead3;border-color:#2a1b12;}
@@ -140,7 +135,6 @@
       <h1 id="h-name"></h1>
       <div class="subtitle" id="h-subtitle"></div>
       <p class="motto" id="h-motto"></p>
-      <div class="langbar" id="langbar"></div>
     </div>
   </header>
 
@@ -173,11 +167,7 @@
   var D = window.MENU_DATA || {site:{}, sections:[]};
   var S = D.site || {};
   var LANGS = ["it","en","de","es","fr"];
-  var LANGLABEL = {it:"IT",en:"EN",de:"DE",es:"ES",fr:"FR"};
 
-  // In modalità demo il menù resta in italiano: le altre lingue sono una
-  // funzione opzionale (mostrata ma non attiva). Per attivarle: DEMO_MODE=false.
-  var DEMO_MODE = true;
 
   // ---- traduzioni curate dell'interfaccia ----
   var UI = {
@@ -238,22 +228,11 @@
     else { el.style.display='none'; }
   }
 
-  // ---- language bar ----
-  var langbar=document.getElementById('langbar');
-  LANGS.forEach(function(lg){
-    var b=document.createElement('button');
-    b.className='langbtn'+(lg===state.lang?' on':'');
-    b.setAttribute('data-lang',lg); b.textContent=LANGLABEL[lg];
-    b.onclick=function(){ setLang(lg); };
-    langbar.appendChild(b);
-  });
-  function paintLang(){ Array.prototype.forEach.call(langbar.children,function(b){ b.className='langbtn'+(b.getAttribute('data-lang')===state.lang?' on':''); }); }
-  function setLang(lg){
-    if(DEMO_MODE && lg!=="it"){ openLangInfo(); return; }
-    if(lg===state.lang) return;
-    state.lang=lg; document.documentElement.setAttribute('lang',lg);
-    closeSheet(); paintLang(); applyStatic(); buildTabs(); render();
-  }
+  // ---- selettore lingua: RIMOSSO per ora ----
+  // Tutta l'infrastruttura multilingua (UI, CAT, ALL, e le descrizioni
+  // tradotte in data.js) resta al suo posto: il menu e' semplicemente
+  // bloccato su italiano. Per riattivarlo bastera' rimettere la langbar
+  // nell'HTML e la funzione setLang().
 
   // ---- testi statici ----
   function applyStatic(){
@@ -370,20 +349,6 @@
     ORDER.forEach(function(k){ body+='<div class="arow"><span class="acode">'+esc(allCode(k))+'</span><span class="aname">'+esc(allName(k))+'</span></div>'; });
     body+='</div>';
     var ln=txt('legendNote'); if(ln){ body+='<p class="sheetnote">'+esc(ln)+'</p>'; }
-    buildSheet(head+body);
-  }
-  function openLangInfo(){
-    var head='<div class="handle"></div><div class="sheethead"><div style="min-width:0;">'
-      +'<h3>Menù multilingua</h3><p>Funzione opzionale</p></div><button class="closebtn">×</button></div>';
-    var body='<div style="margin-top:10px;font-size:14px;line-height:1.65;color:#5c4a38;">'
-      +'La traduzione del menù in <b>inglese, tedesco, spagnolo e francese</b> è una funzione opzionale, attivabile su richiesta.'
-      +'<br><br>In questa versione il menù è mostrato in italiano. Con l\'attivazione, l\'intero contenuto — descrizioni dei piatti comprese — viene tradotto automaticamente e resta sempre allineato al menù.'
-      +'</div><div style="margin-top:16px;display:flex;gap:9px;flex-wrap:wrap;">'
-      +'<span style="padding:5px 11px;border-radius:999px;background:#faeadf;border:1px solid #eecebc;color:#b0472a;font-size:12px;font-weight:600;">EN English</span>'
-      +'<span style="padding:5px 11px;border-radius:999px;background:#faeadf;border:1px solid #eecebc;color:#b0472a;font-size:12px;font-weight:600;">DE Deutsch</span>'
-      +'<span style="padding:5px 11px;border-radius:999px;background:#faeadf;border:1px solid #eecebc;color:#b0472a;font-size:12px;font-weight:600;">ES Español</span>'
-      +'<span style="padding:5px 11px;border-radius:999px;background:#faeadf;border:1px solid #eecebc;color:#b0472a;font-size:12px;font-weight:600;">FR Français</span>'
-      +'</div>';
     buildSheet(head+body);
   }
   document.getElementById('fab').onclick=openLegend;

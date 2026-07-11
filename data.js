@@ -766,7 +766,7 @@ window.MENU_DATA = {
         },
         {
           "name": "Covaccino",
-          "price": "€ 7",
+          "price": "€ 8,50",
           "keys": [
             "glutine"
           ],

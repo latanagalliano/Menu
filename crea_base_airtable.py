@@ -91,7 +91,7 @@ PIATTI = [
  ("Pizze","Calzone","mozzarella e prosciutto cotto","€ 8",False,["glutine","latte"]),
  ("Pizze","Calzone Farcito","mozzarella e un po' di tutto","€ 8,50",False,["glutine","latte"]),
  ("Pizze","Covaccino all'Olio","schiacciatina all'olio","€ 8",False,["glutine"]),
- ("Pizze","Covaccino","schiacciatina con prosciutto crudo","€ 7",False,["glutine"]),
+ ("Pizze","Covaccino","schiacciatina con prosciutto crudo","€ 8,50",False,["glutine"]),
  ("Pizze","Covaccino con Mozzarella","schiacciatina con mozzarella e prosciutto cotto","€ 8",False,["glutine","latte"]),
  ("Pizze","Covaccino Estivo","schiacciatina con pomodoro, prosciutto e rucola","€ 8",False,["glutine"]),
  ("Pizze","Covaccino Estivo con Mozzarella","schiacciatina con mozzarella, prosciutto e rucola","€ 8,50",False,["glutine","latte"]),

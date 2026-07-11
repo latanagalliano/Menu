@@ -4,14 +4,18 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="robots" content="noindex, nofollow">
+<meta name="color-scheme" content="only light">
 <title>La Tana — Menu</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display:ital@0;1&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&display=swap" rel="stylesheet">
 <style>
+  :root{color-scheme:only light;--col:100%;}
+  @media (min-width:900px){:root{--col:560px;}}
   *{box-sizing:border-box;}
   html,body{margin:0;padding:0;}
-  body{background:#160d07;font-family:'DM Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased;color:#2a1c14;}
+  html{background:#33200f;}
+  body{background:#33200f;font-family:'DM Sans',system-ui,sans-serif;-webkit-font-smoothing:antialiased;color:#2a1c14;}
   #tabrow::-webkit-scrollbar{display:none;}
   button{font-family:'DM Sans',sans-serif;}
   @keyframes heroIn{from{opacity:0;transform:translateY(16px);}to{opacity:1;transform:none;}}
@@ -20,9 +24,9 @@
   @keyframes backdropIn{from{opacity:0;}to{opacity:1;}}
   @keyframes ember{0%,100%{transform:translateX(-50%) translateY(0) scale(1);opacity:.78;}50%{transform:translateX(-50%) translateY(-3%) scale(1.06);opacity:1;}}
 
-  .shell{max-width:520px;margin:0 auto;background:linear-gradient(180deg,#f5ecd9 0%,#f2e6cf 55%,#eddfc4 100%);min-height:100vh;box-shadow:0 0 90px rgba(0,0,0,.5);position:relative;}
+  .shell{width:100%;max-width:var(--col);margin:0 auto;background:linear-gradient(180deg,#fbf5e9 0%,#f7eeda 55%,#f3e8ce 100%);min-height:100vh;box-shadow:0 0 90px rgba(0,0,0,.35);position:relative;}
 
-  header.hero{position:relative;padding:62px 24px 34px;text-align:center;overflow:hidden;background:radial-gradient(135% 92% at 50% -14%,#843318 0%,#4c1f11 33%,#2b140b 63%,#1b0e07 100%);color:#f4e9d6;}
+  header.hero{position:relative;padding:62px 24px 34px;text-align:center;overflow:hidden;background:radial-gradient(135% 95% at 50% -12%,#c8632e 0%,#a4471f 30%,#763017 60%,#52210f 100%);color:#f9efdf;}
   .ember{position:absolute;top:-32%;left:50%;width:150%;height:82%;transform:translateX(-50%);background:radial-gradient(closest-side,rgba(230,150,52,.55),rgba(230,150,52,0) 72%);filter:blur(4px);animation:ember 7s ease-in-out infinite;pointer-events:none;}
   .kicker{animation:heroIn .7s ease both;animation-delay:.02s;font-size:11px;letter-spacing:4px;text-transform:uppercase;color:#eaad55;font-weight:600;}
   .hero h1{animation:heroIn .8s ease both;animation-delay:.1s;font-family:'DM Serif Display',serif;font-size:clamp(54px,18vw,84px);line-height:.95;margin:14px 0 0;color:#fbf3e2;letter-spacing:.5px;text-shadow:0 2px 34px rgba(0,0,0,.45);}
@@ -58,11 +62,12 @@
   footer .name{margin-top:22px;font-family:'DM Serif Display',serif;font-size:20px;color:#2a1b12;letter-spacing:.5px;}
   footer .tag{margin-top:4px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:#c0892f;font-weight:600;}
 
-  .fab{position:fixed;bottom:20px;right:max(16px,calc(50vw - 246px));z-index:40;display:inline-flex;align-items:center;gap:9px;padding:12px 18px 12px 13px;border:none;border-radius:999px;background:linear-gradient(135deg,#3b2214,#221007);color:#f6ead3;font-weight:600;font-size:13.5px;letter-spacing:.2px;box-shadow:0 12px 30px -8px rgba(22,10,3,.62);cursor:pointer;}
+  .fab{position:fixed;bottom:20px;right:16px;z-index:40;display:inline-flex;align-items:center;gap:9px;padding:12px 18px 12px 13px;border:none;border-radius:999px;background:linear-gradient(135deg,#4a2b19,#2b160a);color:#f6ead3;font-weight:600;font-size:13.5px;letter-spacing:.2px;box-shadow:0 12px 30px -8px rgba(22,10,3,.55);cursor:pointer;}
+  @media (min-width:900px){.fab{right:calc(50vw - 264px);}}
   .fab .i{width:22px;height:22px;border-radius:50%;border:1.5px solid #eaad55;color:#eaad55;display:inline-flex;align-items:center;justify-content:center;font-size:12px;font-weight:700;font-style:italic;font-family:'DM Serif Display',serif;}
 
   .backdrop{position:fixed;inset:0;z-index:60;background:rgba(40,26,16,.44);backdrop-filter:blur(2px);-webkit-backdrop-filter:blur(2px);animation:backdropIn .25s ease;display:flex;align-items:flex-end;justify-content:center;}
-  .sheet{width:100%;max-width:520px;background:#fbf5ea;border-radius:22px 22px 0 0;padding:10px 20px 30px;box-shadow:0 -12px 44px rgba(0,0,0,.22);animation:sheetUp .32s cubic-bezier(.22,1,.36,1);max-height:82vh;overflow:auto;}
+  .sheet{width:100%;max-width:var(--col);background:#fdf8ee;border-radius:22px 22px 0 0;padding:10px 20px 30px;box-shadow:0 -12px 44px rgba(0,0,0,.22);animation:sheetUp .32s cubic-bezier(.22,1,.36,1);max-height:82vh;overflow:auto;}
   .handle{width:42px;height:4px;border-radius:2px;background:#e2d6bf;margin:2px auto 16px;}
   .sheethead{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:4px;}
   .sheethead h3{font-family:'DM Serif Display',serif;font-size:23px;margin:0;color:#33261c;line-height:1.15;}

@@ -1,11 +1,11 @@
 name: Rigenera menu da Airtable
 
 on:
-  workflow_dispatch:            # pulsante manuale "Run workflow"
-  repository_dispatch:          # trigger via webhook (Airtable)
+  workflow_dispatch:
+  repository_dispatch:
     types: [rebuild]
   schedule:
-    - cron: '*/30 * * * *'      # rete di sicurezza: ogni 30 minuti
+    - cron: '*/30 * * * *'
 
 permissions:
   contents: write
@@ -17,22 +17,30 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      AIRTABLE_TOKEN: ${{ secrets.AIRTABLE_TOKEN }}
+      AIRTABLE_BASE_ID: ${{ secrets.AIRTABLE_BASE_ID }}
+      DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Airtable non ancora collegato
+        if: ${{ env.AIRTABLE_TOKEN == '' || env.AIRTABLE_BASE_ID == '' }}
+        run: |
+          echo "Mancano i secret AIRTABLE_TOKEN e/o AIRTABLE_BASE_ID."
+          echo "Il sito resta pubblicato con il data.js attuale. Nessun errore."
+
       - name: Genera data.js da Airtable
-        env:
-          AIRTABLE_TOKEN: ${{ secrets.AIRTABLE_TOKEN }}
-          AIRTABLE_BASE_ID: ${{ secrets.AIRTABLE_BASE_ID }}
-          DEEPL_API_KEY: ${{ secrets.DEEPL_API_KEY }}
+        if: ${{ env.AIRTABLE_TOKEN != '' && env.AIRTABLE_BASE_ID != '' }}
         run: python3 build_site.py
 
       - name: Commit e push se cambiato
+        if: ${{ env.AIRTABLE_TOKEN != '' && env.AIRTABLE_BASE_ID != '' }}
         run: |
           if [ -n "$(git status --porcelain data.js translations_cache.json)" ]; then
-            git config user.name "Santo Impasto Bot"
-            git config user.email "bot@santoimpasto.local"
+            git config user.name "La Tana Bot"
+            git config user.email "bot@latana.local"
             git add data.js translations_cache.json
             git commit -m "Aggiornamento menu da Airtable [auto]"
             git push

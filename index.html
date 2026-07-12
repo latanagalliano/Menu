@@ -51,11 +51,11 @@
   .items{max-width:40em;margin:0 auto;}
   article.item{text-align:center;padding:calc(var(--u) * .95) calc(var(--u) * .15);animation:fadeInUp .45s ease both;}
   article.item + article.item{border-top:1px solid #e8dcc3;}
-  .item h3{font-family:'DM Serif Display',serif;font-weight:400;text-transform:uppercase;letter-spacing:.02em;font-size:calc(var(--u) * 1.02);color:#33261c;margin:0;line-height:1.3;}
+  .item h3{font-family:'DM Serif Display',serif;font-weight:400;text-transform:uppercase;letter-spacing:.02em;font-size:calc(var(--u) * 1.3);color:#33261c;margin:0;line-height:1.28;}
   .item .bar{color:#cdb590;margin:0 .4em;}
   .item .pz{color:#b8481f;white-space:nowrap;}
   .frozen{color:#c98a2b;font-weight:700;}
-  .item .desc{margin:.5em auto 0;font-size:calc(var(--u) * .82);line-height:1.5;color:#7f6c55;}
+  .item .desc{margin:.55em auto 0;font-size:calc(var(--u) * .88);line-height:1.5;color:#7f6c55;}
   .allg{display:inline-block;margin-top:.6em;padding:.25em .2em .2em;border:none;background:transparent;font-family:'DM Sans',sans-serif;font-weight:600;font-size:calc(var(--u) * .6);letter-spacing:.13em;text-transform:uppercase;line-height:1.5;color:#c0892f;border-bottom:1px dotted rgba(192,137,47,.45);cursor:pointer;}
   .allg.none{color:#7f9a58;border-bottom-color:rgba(127,154,88,.4);}
   .veg{display:inline-flex;vertical-align:-.14em;margin-left:.4em;color:#5f9a3c;}
@@ -303,14 +303,13 @@
         var has=keys.length>0;
         var delay=Math.min(gi*22,600); gi++;
         var desc=t(it.desc);
-        var allTxt=has ? ui('allergens') : ui('noAllergens');
         cards+='<article class="item" style="animation-delay:'+delay+'ms">'
           +'<h3>'+esc(it.name)+(it.frozen?'<span class="frozen">*</span>':'')
           +(it.price?'<span class="bar">|</span><span class="pz">'+esc(it.price)+'</span>':'')
           +(it.veg?LEAF:'')
           +'</h3>'
           +(desc?'<p class="desc">'+esc(desc)+'</p>':'')
-          +'<button class="allg'+(has?'':' none')+'" data-dish="'+esc(sec.id)+'|'+esc(it.name)+'">'+esc(allTxt)+'</button>'
+          +(has?'<button class="allg" data-dish="'+esc(sec.id)+'|'+esc(it.name)+'">'+esc(ui('allergens'))+'</button>':'')
           +'</article>';
       });
       cards+='</div>';

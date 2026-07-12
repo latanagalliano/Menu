@@ -45,6 +45,7 @@ TESTI = [
     ("coperto", "Coperto — solo il numero, es. 2 (vuoto = non compare)", "", 5),
     ("nota_surgelati", "Nota surgelati (in fondo alla pagina)", "* prodotto surgelato all'origine o congelato in loco", 6),
     ("nota_vegetariano", "Nota vegetariano (in fondo alla pagina)", "piatto vegetariano", 7),
+    ("nota_vegetariano", "Nota vegetariano (in fondo alla pagina)", "piatto vegetariano", 7),
     ("nota_allergeni", "Nota allergeni (in fondo alla pagina)", "Menù allergeni e informazioni sugli ingredienti disponibili su richiesta.", 8),
     ("nota_legenda_allergeni", "Nota nel popup della legenda allergeni", "Menù allergeni completo e informazioni sugli ingredienti disponibili su richiesta. Rif. Reg. UE 1169/2011.", 9),
 ]

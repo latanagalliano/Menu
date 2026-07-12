@@ -39,6 +39,31 @@ KEY2LABEL = {
 
 CATEGORIE = ["Antipasti","Primi","Contorni","Pizze","Aggiunte","Birre","Vini","Bevande"]
 
+# Piatti vegetariani (categoria, nome). Solo quelli certi dagli ingredienti:
+# i dubbi restano NON marcati, meglio non dichiarare che dichiarare male.
+# Le bevande non si marcano (come nei menu professionali).
+VEGETARIANI = {
+    ("Antipasti", "Antipasto di Verdure Sott'Olio"),
+    ("Primi", "Tortelli Burro e Salvia"),
+    ("Primi", "Tagliatelle ai Funghi Porcini"),
+    ("Contorni", "Patate Fritte"),
+    ("Contorni", "Insalata Verde"),
+    ("Contorni", "Insalata Mista"),
+    ("Pizze", "Margherita"),
+    ("Pizze", "Funghi"),
+    ("Pizze", "Gorgonzola"),
+    ("Pizze", "Quattro Formaggi"),
+    ("Pizze", "Marinara"),
+    ("Pizze", "Vegetariana"),
+    ("Pizze", "Porcini"),
+    ("Pizze", "Donatello"),
+    ("Pizze", "Strega"),
+    ("Pizze", "Covaccino all'Olio"),
+    ("Aggiunte", "Mozzarella di Bufala"),
+    ("Aggiunte", "Rucola"),
+    ("Aggiunte", "Burrata"),
+}
+
 # (categoria, nome, descrizione, prezzo, surgelato, [allergeni])
 PIATTI = [
  ("Antipasti","Crostini","","€ 4,50",False,["glutine","latte","pesce","sedano"]),
@@ -204,6 +229,7 @@ def main():
         {"name":"Categoria","type":"singleSelect","options":{"choices":[{"name":c} for c in CATEGORIE]}},
         {"name":"Allergeni","type":"multipleSelects","options":{"choices":[{"name":a} for a in ALLERGENI]}},
         {"name":"Surgelato","type":"checkbox","options":{"icon":"check","color":"yellowBright"}},
+        {"name":"Vegetariano","type":"checkbox","options":{"icon":"check","color":"greenBright"}},
         {"name":"Vegetariano","type":"checkbox","options":{"icon":"check","color":"greenBright"}},
         {"name":"Visibile","type":"checkbox","options":{"icon":"check","color":"greenBright"}},
         {"name":"Ordine","type":"number","options":{"precision":0}},

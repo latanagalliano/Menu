@@ -43,22 +43,20 @@
   .tab{padding:.55em 1.05em;border-radius:999px;border:1px solid #e4d6ba;background:#fff9ee;color:#7a674e;font-size:calc(var(--u) * .81);font-weight:600;white-space:nowrap;cursor:pointer;flex:0 0 auto;transition:all .2s ease;}
   .tab.active{border:1px solid #2a1b12;background:#2a1b12;color:#f6ead3;box-shadow:0 6px 15px -6px rgba(42,27,18,.6);}
 
-  /* --- Articoli: impaginazione tipografica, niente riquadri --- */
-  section.sec{padding:calc(var(--u) * 2) calc(var(--u) * 1) calc(var(--u) * .3);}
-  .sechead{text-align:center;margin-bottom:calc(var(--u) * .9);}
-  .sechead h2{font-family:'DM Sans',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.16em;font-size:calc(var(--u) * 1.1);color:#93331a;margin:0;}
-  .sechead .sub{margin-top:.55em;font-size:calc(var(--u) * .62);text-transform:uppercase;letter-spacing:.17em;color:#b1893f;font-weight:600;line-height:1.6;}
-  .items{max-width:40em;margin:0 auto;}
-  article.item{text-align:center;padding:calc(var(--u) * .95) calc(var(--u) * .15);animation:fadeInUp .45s ease both;}
-  article.item + article.item{border-top:1px solid #e8dcc3;}
-  .item h3{font-family:'DM Serif Display',serif;font-weight:400;text-transform:uppercase;letter-spacing:.02em;font-size:calc(var(--u) * 1.02);color:#33261c;margin:0;line-height:1.3;}
-  .item .bar{color:#cdb590;margin:0 .4em;}
-  .item .pz{color:#b8481f;white-space:nowrap;}
+  section.sec{padding:calc(var(--u) * 1.6) calc(var(--u) * 1) calc(var(--u) * .5);}
+  .sechead{display:flex;align-items:baseline;gap:10px;margin-bottom:14px;flex-wrap:wrap;}
+  .sechead h2{font-family:'DM Serif Display',serif;font-size:calc(var(--u) * 1.62);color:#33261c;margin:0;letter-spacing:.2px;}
+  .sechead .sub{font-family:'DM Serif Display',serif;font-style:italic;font-size:calc(var(--u) * .87);color:#c0892f;}
+  .cards{display:flex;flex-direction:column;gap:calc(var(--u) * .62);}
+  article.card{position:relative;background:#fffdf7;border:1px solid #ece0c6;border-radius:15px;padding:calc(var(--u) * .94) calc(var(--u) * 1);box-shadow:0 3px 10px -6px rgba(70,40,15,.22);animation:fadeInUp .5s ease both;}
+  .row{display:flex;justify-content:space-between;gap:14px;align-items:flex-start;}
+  .card h3{font-family:'DM Sans',sans-serif;font-weight:600;font-size:calc(var(--u) * 1.03);color:#33261c;margin:0 0 3px;line-height:1.22;}
   .frozen{color:#c98a2b;font-weight:700;}
-  .item .desc{margin:.5em auto 0;font-size:calc(var(--u) * .82);line-height:1.5;color:#7f6c55;}
-  .allg{display:inline-block;margin-top:.6em;padding:.25em .2em .2em;border:none;background:transparent;font-family:'DM Sans',sans-serif;font-weight:600;font-size:calc(var(--u) * .6);letter-spacing:.13em;text-transform:uppercase;line-height:1.5;color:#c0892f;border-bottom:1px dotted rgba(192,137,47,.45);cursor:pointer;}
-  .allg.none{color:#7f9a58;border-bottom-color:rgba(127,154,88,.4);}
-  .allg:active{opacity:.55;}
+  .card p{margin:0 0 .65em;font-size:calc(var(--u) * .84);line-height:1.45;color:#8a7862;}
+  .pill{display:inline-flex;align-items:center;gap:.45em;padding:.4em .8em .4em .65em;border-radius:999px;font-size:calc(var(--u) * .69);font-weight:600;letter-spacing:.3px;cursor:pointer;border:1px solid #eecebc;background:#faeadf;color:#b0472a;}
+  .pill.none{border:1px solid #d7e0c6;background:#edf1e3;color:#5c7a3d;}
+  .dot{width:6px;height:6px;border-radius:50%;background:currentColor;opacity:.7;}
+  .price{font-family:'DM Sans',sans-serif;font-weight:700;font-size:calc(var(--u) * 1);color:#c1502e;white-space:nowrap;padding-top:1px;}
 
   footer{padding:28px 20px 130px;text-align:center;color:#9b8a73;font-size:calc(var(--u) * .78);line-height:1.75;border-top:1px solid #eadfca;margin-top:12px;}
   footer .note{margin-top:12px;font-style:italic;max-width:320px;margin-left:auto;margin-right:auto;}
@@ -104,17 +102,15 @@
     nav.stick{background:rgba(247,238,218,.92);border-bottom-color:#e1d2b3;}
     .tab{background:#fff9ee;color:#7a674e;border-color:#e4d6ba;}
     .tab.active{background:#2a1b12;color:#f6ead3;border-color:#2a1b12;}
-    .sechead h2{color:#93331a;}
-    .sechead .sub{color:#b1893f;}
-    article.item{background:transparent;}
-    article.item + article.item{border-top-color:#e8dcc3;}
-    .item h3{color:#33261c;}
-    .item .bar{color:#cdb590;}
-    .item .pz{color:#b8481f;}
-    .item .desc{color:#7f6c55;}
+    .sechead h2{color:#33261c;}
+    .sechead .sub{color:#c0892f;}
+    article.card{background:#fffdf7;border-color:#ece0c6;}
+    .card h3{color:#33261c;}
+    .card p{color:#8a7862;}
+    .price{color:#c1502e;}
     .frozen{color:#c98a2b;}
-    .allg{color:#c0892f;background:transparent;}
-    .allg.none{color:#7f9a58;}
+    .pill{background:#faeadf;color:#b0472a;border-color:#eecebc;}
+    .pill.none{background:#edf1e3;color:#5c7a3d;border-color:#d7e0c6;}
     footer{color:#9b8a73;border-top-color:#eadfca;}
     footer .name{color:#2a1b12;}
     footer .tag{color:#c0892f;}
@@ -165,7 +161,7 @@
 
 <div id="sheet-root"></div>
 
-<script src="./data.js"></script>
+<script src="../data.js"></script>
 <script>
 (function(){
   var D = window.MENU_DATA || {site:{}, sections:[]};
@@ -283,22 +279,18 @@
       var sc=document.createElement('section');
       sc.className='sec'; sc.id='sec-'+sec.id; sc.setAttribute('data-sec',sec.id);
       var subt=catSub(sec);
-      var head='<div class="sechead"><h2>'+esc(catTitle(sec))+'</h2>'
-        +(subt?'<div class="sub">'+esc(subt)+'</div>':'')+'</div>';
-      var cards='<div class="items">';
+      var head='<div class="sechead"><h2>'+esc(catTitle(sec))+'</h2>'+(subt?'<span class="sub">'+esc(subt)+'</span>':'')+'</div>';
+      var cards='<div class="cards">';
       items.forEach(function(it){
-        var keys=it.keys||[];
-        var has=keys.length>0;
-        var delay=Math.min(gi*22,600); gi++;
+        var has=(it.keys||[]).length>0;
+        var delay=Math.min(gi*30,600); gi++;
         var desc=t(it.desc);
-        var allTxt=has ? keys.map(function(k){return allName(k);}).join(', ') : ui('noAllergens');
-        cards+='<article class="item" style="animation-delay:'+delay+'ms">'
-          +'<h3>'+esc(it.name)+(it.frozen?'<span class="frozen">*</span>':'')
-          +(it.price?'<span class="bar">|</span><span class="pz">'+esc(it.price)+'</span>':'')
-          +'</h3>'
-          +(desc?'<p class="desc">'+esc(desc)+'</p>':'')
-          +'<button class="allg'+(has?'':' none')+'" data-dish="'+esc(sec.id)+'|'+esc(it.name)+'">'+esc(allTxt)+'</button>'
-          +'</article>';
+        cards+='<article class="card" style="animation-delay:'+delay+'ms">'
+          +'<div class="row"><div style="flex:1;min-width:0;">'
+          +'<h3>'+esc(it.name)+(it.frozen?'<span class="frozen"> *</span>':'')+'</h3>'
+          +(desc?'<p>'+esc(desc)+'</p>':'')
+          +'<button class="pill'+(has?'':' none')+'" data-dish="'+esc(sec.id)+'|'+esc(it.name)+'"><span class="dot"></span>'+(has?ui('allergens'):ui('noAllergens'))+'</button>'
+          +'</div><div class="price">'+esc(it.price)+'</div></div></article>';
       });
       cards+='</div>';
       sc.innerHTML=head+cards; main.appendChild(sc);

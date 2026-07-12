@@ -125,6 +125,30 @@ PIATTI = [
  ("Bevande","Caffè","","€ 1,50",False,[]),
 ]
 
+# Piatti vegetariani (coppia categoria+nome). Marcati solo quelli certi
+# dagli ingredienti: i dubbi restano da spuntare a mano su Airtable.
+VEGETARIANI = {
+ ("Antipasti","Antipasto di Verdure Sott'Olio"),
+ ("Primi","Tortelli Burro e Salvia"),
+ ("Primi","Tagliatelle ai Funghi Porcini"),
+ ("Contorni","Patate Fritte"),
+ ("Contorni","Insalata Verde"),
+ ("Contorni","Insalata Mista"),
+ ("Pizze","Margherita"),
+ ("Pizze","Funghi"),
+ ("Pizze","Gorgonzola"),
+ ("Pizze","Quattro Formaggi"),
+ ("Pizze","Marinara"),
+ ("Pizze","Vegetariana"),
+ ("Pizze","Porcini"),
+ ("Pizze","Donatello"),
+ ("Pizze","Strega"),
+ ("Pizze","Covaccino all'Olio"),
+ ("Aggiunte","Mozzarella di Bufala"),
+ ("Aggiunte","Rucola"),
+ ("Aggiunte","Burrata"),
+}
+
 
 def req(method, url, token, payload=None):
     data = json.dumps(payload).encode() if payload is not None else None
@@ -180,6 +204,7 @@ def main():
         {"name":"Categoria","type":"singleSelect","options":{"choices":[{"name":c} for c in CATEGORIE]}},
         {"name":"Allergeni","type":"multipleSelects","options":{"choices":[{"name":a} for a in ALLERGENI]}},
         {"name":"Surgelato","type":"checkbox","options":{"icon":"check","color":"yellowBright"}},
+        {"name":"Vegetariano","type":"checkbox","options":{"icon":"check","color":"greenBright"}},
         {"name":"Visibile","type":"checkbox","options":{"icon":"check","color":"greenBright"}},
         {"name":"Ordine","type":"number","options":{"precision":0}},
     ]
@@ -205,7 +230,8 @@ def main():
         records.append({"fields":{
             "Nome":nome, "Descrizione":desc, "Prezzo":prezzo, "Categoria":cat,
             "Allergeni":[KEY2LABEL[k] for k in keys],
-            "Surgelato":bool(frozen), "Visibile":True, "Ordine":i
+            "Surgelato":bool(frozen), "Vegetariano":(cat,nome) in VEGETARIANI,
+            "Visibile":True, "Ordine":i
         }})
     ok = 0
     for i in range(0, len(records), 10):

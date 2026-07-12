@@ -8,6 +8,7 @@ window.MENU_DATA = {
     "motto": "«Da noi si sta bene, come in una tana.»",
     "coperto": "",
     "frozenLegend": "* prodotto surgelato all'origine o congelato in loco",
+    "vegLegend": "piatto vegetariano",
     "footerNote": "Menù allergeni e informazioni sugli ingredienti disponibili su richiesta.",
     "legendNote": "Menù allergeni completo e informazioni sugli ingredienti disponibili su richiesta. Rif. Reg. UE 1169/2011."
   },
@@ -82,7 +83,8 @@ window.MENU_DATA = {
             "de": "",
             "es": "",
             "fr": ""
-          }
+          },
+          "veg": true
         }
       ]
     },
@@ -185,7 +187,8 @@ window.MENU_DATA = {
             "es": "",
             "fr": ""
           },
-          "frozen": true
+          "frozen": true,
+          "veg": true
         },
         {
           "name": "Spaghetti al Granchio",
@@ -219,7 +222,8 @@ window.MENU_DATA = {
             "es": "",
             "fr": ""
           },
-          "frozen": true
+          "frozen": true,
+          "veg": true
         },
         {
           "name": "Würstel con Patate Fritte",
@@ -269,7 +273,8 @@ window.MENU_DATA = {
             "es": "",
             "fr": ""
           },
-          "frozen": true
+          "frozen": true,
+          "veg": true
         },
         {
           "name": "Insalata Verde",
@@ -281,7 +286,8 @@ window.MENU_DATA = {
             "de": "",
             "es": "",
             "fr": ""
-          }
+          },
+          "veg": true
         },
         {
           "name": "Insalata Mista",
@@ -293,7 +299,8 @@ window.MENU_DATA = {
             "de": "",
             "es": "",
             "fr": ""
-          }
+          },
+          "veg": true
         }
       ]
     },
@@ -315,7 +322,8 @@ window.MENU_DATA = {
             "de": "pomodoro e mozzarella",
             "es": "pomodoro e mozzarella",
             "fr": "pomodoro e mozzarella"
-          }
+          },
+          "veg": true
         },
         {
           "name": "Capricciosa",
@@ -473,7 +481,8 @@ window.MENU_DATA = {
             "de": "pomodoro, mozzarella e funghi champignon",
             "es": "pomodoro, mozzarella e funghi champignon",
             "fr": "pomodoro, mozzarella e funghi champignon"
-          }
+          },
+          "veg": true
         },
         {
           "name": "Gorgonzola",
@@ -488,7 +497,8 @@ window.MENU_DATA = {
             "de": "pomodoro, mozzarella e gorgonzola",
             "es": "pomodoro, mozzarella e gorgonzola",
             "fr": "pomodoro, mozzarella e gorgonzola"
-          }
+          },
+          "veg": true
         },
         {
           "name": "Quattro Formaggi",
@@ -503,7 +513,8 @@ window.MENU_DATA = {
             "de": "pomodoro, mozzarella, gorgonzola, stracchino ed edamer",
             "es": "pomodoro, mozzarella, gorgonzola, stracchino ed edamer",
             "fr": "pomodoro, mozzarella, gorgonzola, stracchino ed edamer"
-          }
+          },
+          "veg": true
         },
         {
           "name": "Contadina",
@@ -532,7 +543,8 @@ window.MENU_DATA = {
             "de": "pomodoro, aglio e origano",
             "es": "pomodoro, aglio e origano",
             "fr": "pomodoro, aglio e origano"
-          }
+          },
+          "veg": true
         },
         {
           "name": "Vegetariana",
@@ -547,7 +559,8 @@ window.MENU_DATA = {
             "de": "pomodoro, mozzarella, funghi, cipolle, olive e verdure",
             "es": "pomodoro, mozzarella, funghi, cipolle, olive e verdure",
             "fr": "pomodoro, mozzarella, funghi, cipolle, olive e verdure"
-          }
+          },
+          "veg": true
         },
         {
           "name": "Porcini",
@@ -563,7 +576,8 @@ window.MENU_DATA = {
             "es": "pomodoro, mozzarella e funghi porcini",
             "fr": "pomodoro, mozzarella e funghi porcini"
           },
-          "frozen": true
+          "frozen": true,
+          "veg": true
         },
         {
           "name": "Gorgonzola e Speck",
@@ -610,7 +624,8 @@ window.MENU_DATA = {
             "de": "pomodoro, mozzarella, melanzane e cipolle",
             "es": "pomodoro, mozzarella, melanzane e cipolle",
             "fr": "pomodoro, mozzarella, melanzane e cipolle"
-          }
+          },
+          "veg": true
         },
         {
           "name": "Napoli",
@@ -687,7 +702,8 @@ window.MENU_DATA = {
             "de": "porri, cipolla e peperoncino",
             "es": "porri, cipolla e peperoncino",
             "fr": "porri, cipolla e peperoncino"
-          }
+          },
+          "veg": true
         },
         {
           "name": "Burrata, Acciughe e Capperi",
@@ -762,7 +778,8 @@ window.MENU_DATA = {
             "de": "schiacciatina all'olio",
             "es": "schiacciatina all'olio",
             "fr": "schiacciatina all'olio"
-          }
+          },
+          "veg": true
         },
         {
           "name": "Covaccino",
@@ -869,7 +886,8 @@ window.MENU_DATA = {
             "de": "",
             "es": "",
             "fr": ""
-          }
+          },
+          "veg": true
         },
         {
           "name": "Rucola",
@@ -881,7 +899,8 @@ window.MENU_DATA = {
             "de": "",
             "es": "",
             "fr": ""
-          }
+          },
+          "veg": true
         },
         {
           "name": "Burrata",
@@ -895,7 +914,8 @@ window.MENU_DATA = {
             "de": "",
             "es": "",
             "fr": ""
-          }
+          },
+          "veg": true
         },
         {
           "name": "Altri ingredienti",

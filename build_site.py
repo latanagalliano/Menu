@@ -47,6 +47,7 @@ DEFAULT_SITE = {
     "motto": "«Da noi si sta bene, come in una tana.»",
     "coperto": "",   # vuoto = la riga non compare
     "frozenLegend": "* prodotto surgelato all'origine o congelato in loco",
+    "vegLegend": "piatto vegetariano",
     "footerNote": "Menù allergeni e informazioni sugli ingredienti disponibili su richiesta.",
     "legendNote": "Menù allergeni completo e informazioni sugli ingredienti disponibili su richiesta. Rif. Reg. UE 1169/2011.",
 }
@@ -55,6 +56,7 @@ DEFAULT_SITE = {
 TESTI_MAP = {
     "nome_locale":"name", "sopratitolo":"kicker", "sottotitolo":"subtitle",
     "motto":"motto", "coperto":"coperto", "nota_surgelati":"frozenLegend",
+    "nota_vegetariano":"vegLegend",
     "nota_allergeni":"footerNote", "nota_legenda_allergeni":"legendNote",
 }
 
@@ -199,6 +201,7 @@ def build(piatti, categorie, testi, deepl_key):
                 "desc": tr_desc((f.get("Descrizione") or "").strip()),
             }
             if truthy(f.get("Surgelato")): item["frozen"] = True
+            if truthy(f.get("Vegetariano")): item["veg"] = True
             items.append(item)
         if items:
             sections.append({"id": name_to_id(nome), "title": nome,
